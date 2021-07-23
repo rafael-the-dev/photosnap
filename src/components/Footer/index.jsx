@@ -9,7 +9,7 @@ const FooterNavigation = ({ customClass }) => {
                     <Link to="/" className="link footer__link">Home</Link>
                 </li>
                 <li className="footer__item">
-                    <Link to="/" className="link footer__link">Stories</Link>
+                    <Link to="/stories" className="link footer__link">Stories</Link>
                 </li>
                 <li className="footer__item">
                     <Link to="/" className="link footer__link">Features</Link>

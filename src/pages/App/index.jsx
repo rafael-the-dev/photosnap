@@ -1,9 +1,10 @@
 import './styles.scss';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from '../Home';
-import Stories from '../Stories';
+import loadable from '@loadable/component';
 
 function App() {
+    const Stories = loadable(() => import('../Stories'));
     return (
         <>
             <Router>
