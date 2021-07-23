@@ -1,0 +1,98 @@
+@import './general.scss';
+
+.section {
+    @extend %align-stretch;
+    @extend %flex;
+    @extend %flex-column;
+    @extend %w-100;
+
+    @media screen and (min-width: 564px) {
+        & {
+            flex-direction: row;
+        }
+
+        &:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+    }
+}
+
+.section__illustration {
+    @extend %bg-cover;
+    @extend %bg-center;
+    @extend %bg-no-repeat;
+    height: 250px;
+
+    @media screen and (min-width: 564px) {
+        & {
+            height: 450px;
+            width: 40%;
+        }
+    }
+
+    @media screen and (min-width: 900px) {
+        & {
+            width: 60%;
+        }
+    }
+}
+
+.section__content {
+    @extend %align-start;
+    @extend %flex;
+    @extend %flex-column;
+    @extend %px-5;
+    @extend %py-2;
+    @extend %text-left;
+    @extend %w-100;
+
+    @media screen and (min-width: 564px) {
+        & {
+            justify-content: center;
+            width: 60%;
+        }
+    }
+
+    @media screen and (min-width: 900px) {
+        & {
+            width: 40%;
+        }
+    }
+    
+}
+
+.section__content-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 2rem;
+    letter-spacing: 1px;
+    margin-top: 1rem;
+    opacity: .9;
+    text-transform: uppercase;
+}
+
+.section__content-description {
+    font-size: .95rem;
+    line-height: 1.2rem;
+    margin-top: .8rem;
+    opacity: .8;
+}
+
+.section__content-link {
+    @extend %decoration-none;
+    @extend %text-black;
+    @extend %uppercase;
+    font-size: .9rem;
+    margin-top: 1rem;
+}
+
+.section__content-link--icon {
+    @extend %bg-cover;
+    @extend %bg-center;
+    @extend %bg-no-repeat;
+    background-image: url('../icons/arrow.svg');
+    display: inline-block;
+    height: 20px;
+    margin-left: 15px;
+    width: 40px;
+}

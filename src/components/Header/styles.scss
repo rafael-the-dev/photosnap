@@ -1,0 +1,104 @@
+@import '../../assets/css/general.scss';
+@import '../../assets/css/base.scss';
+
+.header {
+    @extend %flex;
+    @extend %align-center;
+    @extend %justify-between;
+    @extend %px-5;
+    @extend %py-1;
+    @extend %w-100;
+}
+
+.header__navigation {
+    @extend %d-none;
+
+    @media screen and (min-width: 565px) {
+        display: block;
+    }
+}
+
+.header__list {
+    @extend %flex;
+    @extend %align-center;
+}
+
+.header__item {
+    margin-left: 15px;
+
+    &:last-child {
+        margin-left: 0;
+    }
+}
+
+.header__link {
+    @extend %decoration-none;
+    @extend %font-weight-7;
+    @extend %text-black;
+    @extend %uppercase;
+    font-size: .8rem;
+    padding: .4rem 1rem;
+
+    @media screen and (min-width: 565px) {
+        & {
+            padding-left: .5rem;
+            padding-right: .5rem;
+        }
+    }
+
+    @media screen and (min-width: 842px) {
+        & {
+            font-size: .9rem;
+            padding: .4rem 1rem;
+        }
+    }
+}
+
+.header__menu-button {
+    @extend %flex;
+    @extend %align-center;
+    @extend %justify-center;
+    @extend %flex-column;
+    @extend %bg-transparent;
+    @extend %outline-none;
+    @extend %border-none;
+    height: 30px;
+    width: 32px;
+
+    @media screen and (min-width: 565px) {
+        & {
+            display: none;
+        }
+    }
+}
+
+.header__line {
+    @extend %w-100;
+    background-color: $black;
+    height: 2px;
+    margin-bottom: 7px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.header__invite-button {
+    @extend %d-none;
+    @extend %bg-black;
+    @extend %decoration-none;
+    @extend %font-weight-7;
+    @extend %uppercase;
+    @extend %text-white;
+    @extend %py-1;
+    font-size: .8rem;
+    padding: .5rem 1rem;
+
+    @media screen and (min-width: 565px) {
+        & {
+            display: block;
+        }
+    }
+}
+
+@import '../../assets/css/responsive.scss';

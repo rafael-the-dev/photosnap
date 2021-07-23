@@ -1,0 +1,25 @@
+@import '../../assets/css/general.scss';
+
+.logo-container {
+    height: 20px;
+    width: 50%;
+
+    @media screen and (min-width: 565px) {
+        & {
+            height: 15px;
+            width: 21%;
+        }
+    }
+
+    @media screen and (min-width: 1220px) {
+        & {
+            height: 19px;
+        }
+    }
+}
+
+.logo {
+    @extend %d-block;
+    @extend %h-100;
+    @extend %w-100;
+}

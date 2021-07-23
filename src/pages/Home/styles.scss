@@ -1,0 +1,157 @@
+@import '../../assets/css/general.scss';
+@import '../../assets/css/shared.scss';
+@import '../../assets/css/responsive.scss';
+
+.hero__illustration {
+    background-image: url('../../assets/images/home/mobile/create-and-share.jpg');
+
+    @media screen and (min-width: 564px) {
+        & {
+            background-image: url('../../assets/images/home/tablet/create-and-share.jpg');
+        }
+    }
+
+    @media screen and (min-width: 900px) {
+        & {
+            background-image: url('../../assets/images/home/desktop/create-and-share.jpg');
+        }
+    }
+}
+
+.hero__content {
+    @extend %bg-black;
+    @extend %text-white;
+}
+
+.hero__content-link {
+    @extend %text-white;
+}
+
+.stories__illustration {
+    background-image: url('../../assets/images/home/mobile/beautiful-stories.jpg');
+
+    @media screen and (min-width: 564px) {
+        & {
+            background-image: url('../../assets/images/home/tablet/beautiful-stories.jpg');
+        }
+    }
+
+    @media screen and (min-width: 900px) {
+        & {
+            background-image: url('../../assets/images/home/desktop/beautiful-stories.jpg');
+        }
+    }
+}
+
+.design__illustration {
+    background-image: url('../../assets/images/home/mobile/designed-for-everyone.jpg');
+
+    @media screen and (min-width: 564px) {
+        & {
+            background-image: url('../../assets/images/home/tablet/designed-for-everyone.jpg');
+        }
+    }
+
+    @media screen and (min-width: 900px) {
+        & {
+            background-image: url('../../assets/images/home/desktop/designed-for-everyone.jpg');
+        }
+    }
+}
+
+.cards-section {
+    @extend %align-stretch;
+    @extend %flex;
+    @extend %flex-column; 
+   
+    //@extend %py-2;
+    @extend %w-100;
+
+
+    @media screen and (min-width: 501px) {
+        & {
+            flex-flow: row wrap;
+        }
+    }
+}
+
+.service {
+    @extend %align-stretch;
+    @extend %flex;
+    @extend %flex-column;
+    @extend %justify-between;
+    @extend %px-5;
+    @extend %py-2;
+    @extend %w-100;
+
+    @media screen and (min-width: 501px) {
+        & {
+            padding-left: 15%;
+            padding-right: 15%;
+        }
+    }
+
+    @media screen and (min-width: 801px) {
+        & {
+            flex-direction: row;
+            padding: 4rem 5%;
+        }
+    }
+
+}
+
+.service__card {
+    @extend %align-center;
+    @extend %flex;
+    @extend %flex-column;
+    @extend %w-100;
+    margin-bottom: 2rem;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    @media screen and (min-width: 801px) {
+        & {
+            margin-bottom: 0;
+            width: 31%;
+        }
+    }
+}
+
+.service__card-title {
+    @extend %font-weight-7;
+    font-size: 1.2rem;
+
+    &::before {
+        @extend %d-block;
+        @extend %bg-contain;
+        @extend %bg-no-repeat;
+        @extend %bg-center;
+        
+        content: '';
+        height: 38px;
+        margin: 0 auto 1.3rem auto;
+        width: 40%;
+    }
+
+    &--responsive::before {
+        background-image: url('../../assets/icons/responsive.svg');
+    }
+
+    &--limitless::before {
+        background-image: url('../../assets/icons/no-limit.svg');
+    }
+
+    &--embed::before {
+        background-image: url('../../assets/icons/embed.svg');
+    }
+}
+
+.service__card-description {
+    @extend %opacity-8;
+    @extend %text-center;
+    font-size: .85rem;
+    line-height: 1.3rem;
+    margin-top: 1rem;
+}

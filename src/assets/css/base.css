@@ -1,0 +1,11 @@
+
+*:not(.fa){
+    box-sizing: border-box;
+    font-family: 'DM Sans', sans-serif !important;
+}
+
+body {
+    max-width: 1600px;
+    min-width: 300px;
+}
+
