@@ -1,0 +1,50 @@
+
+.feature-hero__illustration {
+    background-image: url('../../assets/images/features/mobile/hero.jpg');
+
+    @media screen and (min-width: 564px) {
+        & {
+            background-image: url('../../assets/images/features/tablet/hero.jpg');
+        }
+    }
+
+    @media screen and (min-width: 900px) {
+        & {
+            background-image: url('../../assets/images/features/desktop/hero.jpg');
+        }
+    }
+}
+
+.features-service {
+    @media screen and (min-width: 656px) {
+        & {
+            flex-flow: row wrap;
+            padding-left: 10%;
+            padding-right: 10%;
+        }
+    }
+
+    @media screen and (min-width: 900px) {
+        & {
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+    }
+
+}
+
+.features-service__card {
+
+    @media screen and (min-width: 656px) {
+        & {
+            margin-bottom: 3rem;
+            width: 47%;
+        }
+    }
+
+    @media screen and (min-width: 900px) {
+        & {
+            width: 31%;
+        }
+    }
+}

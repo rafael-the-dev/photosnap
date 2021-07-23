@@ -1,0 +1,49 @@
+@import '../../assets/css/general.scss';
+
+.banner {
+    @extend %align-start;
+    @extend %bg-cover;
+    @extend %bg-center;
+    @extend %bg-no-repeat;
+    @extend %flex;
+    @extend %flex-column;
+    @extend %justify-center;
+    @extend %px-5;
+    @extend %w-100;
+
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, .1), rgba(0, 0, 0, .3)), url('../../assets/images/shared/mobile/bg-beta.jpg');
+    height: 250px;
+
+    @media screen and (min-width: 564px) {
+        & {
+            align-items: center;
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, .1), rgba(0, 0, 0, .3)), url('../../assets/images/shared/tablet/bg-beta.jpg');
+            flex-direction: row;
+            height: 270px;
+            justify-content: space-between;
+        }
+    }
+
+    @media screen and (min-width: 900px) {
+        & {
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, .1), rgba(0, 0, 0, .3)), url('../../assets/images/shared/desktop/bg-beta.jpg');
+            height: 230px;
+        }
+    }
+}
+
+.banner__title {
+    @extend %font-weight-7;
+    @extend %uppercase;
+    @extend %text-white;
+
+    font-size: 1.3rem;
+    line-height: 1.7rem;
+
+    @media screen and (min-width: 564px) {
+        & {
+            font-size: 1.7rem;
+            line-height: 2.2rem;
+        }
+    }
+}

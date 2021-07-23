@@ -5,11 +5,13 @@ import loadable from '@loadable/component';
 
 function App() {
     const Stories = loadable(() => import('../Stories'));
+    const Features = loadable(() => import('../Features'));
     return (
         <>
             <Router>
                 <Switch>
                     <Route exact path="/stories" component={Stories} />
+                    <Route exact path="/features" component={Features} />
                     <Route exact path="/" component={Home} /> 
                 </Switch>
             </Router>

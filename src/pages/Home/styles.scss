@@ -81,7 +81,7 @@
     @extend %flex-column;
     @extend %justify-between;
     @extend %px-5;
-    @extend %py-2;
+    @extend %py-3;
     @extend %w-100;
 
     @media screen and (min-width: 501px) {
@@ -93,7 +93,7 @@
 
     @media screen and (min-width: 801px) {
         & {
-            flex-direction: row;
+            flex-flow: row wrap;
             padding: 4rem 5%;
         }
     }
@@ -145,6 +145,18 @@
 
     &--embed::before {
         background-image: url('../../assets/icons/embed.svg');
+    }
+
+    &--domain::before {
+        background-image: url('../../assets/icons/custom-domain.svg');
+    }
+
+    &--boost::before {
+        background-image: url('../../assets/icons/boost-exposure.svg');
+    }
+
+    &--drag::before {
+        background-image: url('../../assets/icons/drag-drop.svg');
     }
 }
 
