@@ -5,62 +5,121 @@
     @extend %flex;
     @extend %justify-between;
     @extend %px-5;
-    @extend %py-1;
+    @extend %py-2;
     @extend %w-100;
+
+    background-color: #F5F5F5;
+    margin-bottom: 1rem;
+
+    &--pro {
+        @extend %bg-black;
+        @extend %text-white;
+        background-color: #000 !important;
+
+        .plan__price {
+            color: #FFF;
+        }
+    }
 
     @media screen and (min-width: 501px) {
         align-items: stretch;
         flex-direction: row;
     }
 
-    &--pro {
-        @extend %bg-black;
-        @extend %text-white;
+    @media screen and (min-width: 900px) {
+        & {
+            margin-bottom: 0;
+            width: 33%;
+        }
+
+        &--pro {
+            transform: scaleY(1.2);
+        }
     }
 }
 
 .plan__content {
     @extend %align-center;
-    @extend %d-none;
+    @extend %flex;
     @extend %flex-column;
     @extend %justify-between;
+    @extend %text-black;
     @extend %text-center;
-    @extend %text-white;
     @extend %w-100;
-}
 
-.plan__content--tablet {
-    @extend %align-center;
-    @extend %d-none;
-    @extend %flex-column;
-    @extend %justify-start;
+    &--pro  {
+        color: #FFF !important;
+    }
+
+    &--tablet {
+        @extend %align-center;
+        @extend %d-none;
+        @extend %flex-column;
+        @extend %justify-start;
+    }
 
     @media screen and (min-width: 501px) {
-        display: flex;
+        & {
+            align-items: flex-start;
+            width: 50%;
+        }
+
+        &--tablet {
+            display: flex;
+        }
+    }
+
+    @media screen and (min-width: 900px) {
+        & {
+            align-items: center;
+            width: 100%;
+        }
+        &--tablet {
+            display: none;
+        }
     }
 }
 
+
+
 .plan__name {
     @extend %font-weight-7;
-    font-size: 1.3rem;
+    @extend %opacity-8;
+    font-size: 1.7rem;
 }
 
 .plan__description {
     @extend %opacity-8;
-    font-size: .9rem;
+    font-size: .95rem;
+    line-height: 1.4rem;
+    margin-top: 1rem;
+
+    @media screen and (min-width: 501px) {
+       & {
+           text-align: left;
+       }
+    }
+
+    @media screen and (min-width: 900px) {
+       & {
+           text-align: center;
+       }
+    }
 }
 
 .plan__price {
     @extend %font-weight-7;
     @extend %text-center;
-    @extend %opacity-8;
-    font-size: 1.4rem;
+    @extend %opacity-9;
+    font-size: 2.6rem;
+    margin-top: 2rem;
 
     &::after {
         @extend %d-block;
         content: 'per month';
         font-size: .95rem;
-        margin-top: 1rem;
+        margin-top: 6px;
+        opacity: .7;
     }
 
     &--anually::after {   
@@ -68,19 +127,53 @@
     }
 
     @media screen and (min-width: 501px) {
-        text-align: right;
+        & {
+            color: #000;
+            font-size: 2.1rem;
+            margin-top: 0;
+            text-align: right;
+        }
+
+        &--tablet {
+            display: none !important;
+        }
+    }
+
+    @media screen and (min-width: 900px) {
+        &--tablet {
+            display: block !important;
+            margin-top: 2rem;
+            text-align: center;
+        }
     }
 }
 
 .plan__link {
     @extend %bg-black;
+    @extend %decoration-none;
+    @extend %font-weight-7;
     @extend %text-white;
+    @extend %uppercase;
     font-size: .9rem;
     margin: 1.5rem auto 0 auto;
+    padding: .6rem 0;
     width: 90%;
 
     &--pro {
-        @extend %bg-white;
         @extend %text-black;
+        background-color: #FFF !important;
+        color: #000 !important;
+    }
+
+    @media screen and (min-width: 501px) {
+        &  {
+            width: 100%;
+        }
+    }
+
+    @media screen and (min-width: 900px) {
+        &  {
+            width: 90%;
+        }
     }
 }

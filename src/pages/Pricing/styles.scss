@@ -1,3 +1,5 @@
+@import '../../assets/css/general.scss';
+
 .pricing-hero__illustration {
     background-image: url('../../assets/images/pricing/mobile/hero.jpg');
 
@@ -11,5 +13,33 @@
         & {
             background-image: url('../../assets/images/pricing/desktop/hero.jpg');
         }
+    }
+}
+
+.plans-section {
+    @extend %px-5;
+    @extend %py-2;
+
+    @media screen and (min-width: 900px) {
+       & {
+           padding-bottom: 3rem;
+           padding: 5rem 0;
+       }
+    }
+}
+
+.plans-section__division {
+    @extend %align-stretch;
+    @extend %flex;
+    @extend %flex-column;
+    @extend %justify-center;
+    @extend %text-center;
+    @extend %text-white;
+    @extend %w-100;
+
+     @media screen and (min-width: 900px) {
+       & {
+           flex-direction: row;
+       }
     }
 }
