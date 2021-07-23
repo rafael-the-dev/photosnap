@@ -28,6 +28,62 @@
     }
 }
 
+.plans-section__controller {
+    @extend %align-center;
+    @extend %flex;
+    @extend %justify-center;
+    @extend %w-100;
+    margin-bottom: 2rem;
+
+    @media screen and (min-width: 501px) {
+       & {
+            margin-bottom: 3rem;
+       }
+    }
+
+    @media screen and (min-width: 900px) {
+        & {
+            margin-bottom: 4rem;
+        }
+     }
+}
+
+.plans-section__duration {
+    @extend %opacity-9;
+    font-size: 1.1rem;
+}
+
+.active {
+    font-weight: 700;
+    opacity: 1;
+}
+
+.plans-section__toggle-button {
+    @extend %align-center;
+    @extend %border-none;
+    @extend %flex;
+    @extend %justify-start;
+    @extend %outline-none;
+    background-color: #979797;
+    border-radius: 15px;
+    height: 30px;
+    margin: 0 4%;
+    padding-left: 4px;
+    padding-right: 4px;
+    width: 55px;
+}
+
+.switcher {
+    justify-content: flex-end !important;
+}
+
+.toggle {
+    @extend %bg-black;
+    border-radius: 50%;
+    height: 90%;
+    width: 56%;
+}
+
 .plans-section__division {
     @extend %align-stretch;
     @extend %flex;

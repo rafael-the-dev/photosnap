@@ -3,7 +3,7 @@ import Footer from '../../components/Footer';
 import Banner from '../../components/Banner';
 import './styles.scss';
 import Plan from '../../components/Plan';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 const prices = {
     monthly: {
@@ -48,30 +48,61 @@ const prices = {
     }
 };
 
-const plans = duration => {
-    return (
-        <div>
-            <Plan plan={prices[duration].basic} />
-            <Plan plan={prices[duration].pro} customClass="plan--pro" />
-            <Plan plan={prices[duration].business} />
-        </div>
-    );
-};
-
 const Pricing = () => {
     const [ duration, setDuration ] = useState('monthly');
+    const monthlyRef = useRef(null);
+    const yearlyRef = useRef(null);
+    const toggleButtonRef = useRef(null);
+    const [ index, setIndex ] = useState(0);
+    const types = [
+        {
+            name: 'monthly',
+            ref: monthlyRef
+        },
+        {
+            name: 'yearly',
+            ref: yearlyRef
+        }
+    ];
+    const headerMemo = useMemo(() => {
+        return <Header />
+    }, [ ]); 
 
-    /*const plansMemo = useMemo(() => {
-        return plans(duration);
-    }, [ duration ]); */
+    const bannerMemo = useMemo(() => {
+        return <Banner />;
+    }, [ ]); 
+
+    const footerMemo = useMemo(() => {
+        return <Footer />;
+    }, [ ]); 
 
     useEffect(() => {
         setDuration(d => 'monthly');
+        setIndex(i => 0)
+
+        return () => { setDuration(d => 'monthly'); setIndex(i => 0)};
     }, []);
+
+    const clickHandler = event => {
+        event.stopPropagation();
+        types[index].ref.current.classList.toggle('active');
+        toggleButtonRef.current.classList.toggle('switcher');
+        let temp = index;
+
+        if(index === 0) {
+            temp = 1;
+        } else {
+            temp = 0;
+        }
+        setDuration(d => types[temp].name);
+        types[temp].ref.current.classList.toggle('active');
+        setIndex(i => temp);
+        
+    };
 
     return (
         <>
-            <Header />
+            { headerMemo }
             <main className="px-xl">
                 <section className="section pricing-hero">
                     <div className="section__illustration pricing-hero__illustration"></div>
@@ -85,15 +116,35 @@ const Pricing = () => {
                     </div>
                 </section>
                 <section className="plans-section">
+                    <div className="plans-section__controller">
+                        <span 
+                            onClick={clickHandler} 
+                            ref={monthlyRef} 
+                            className="active plans-section__duration">
+                            Monthly
+                        </span>
+                        <button 
+                            ref={toggleButtonRef} 
+                            onClick={clickHandler} 
+                            className="plans-section__toggle-button">
+                            <span className="toggle"></span>
+                        </button>
+                        <span 
+                            onClick={clickHandler} 
+                            ref={yearlyRef} 
+                            className="plans-section__duration">
+                            Yearly
+                        </span>
+                    </div>
                     <div className="plans-section__division">
                         <Plan plan={prices[duration].basic} />
                         <Plan plan={prices[duration].pro} customClass="plan--pro"/>
                         <Plan plan={prices[duration].business} />
                     </div>
                 </section>
-                <Banner />
+                { bannerMemo }
             </main>
-            <Footer />
+            { footerMemo }
         </>
     );
 };
