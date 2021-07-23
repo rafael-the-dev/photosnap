@@ -1,0 +1,15 @@
+.pricing-hero__illustration {
+    background-image: url('../../assets/images/pricing/mobile/hero.jpg');
+
+    @media screen and (min-width: 564px) {
+        & {
+            background-image: url('../../assets/images/pricing/tablet/hero.jpg');
+        }
+    }
+
+    @media screen and (min-width: 900px) {
+        & {
+            background-image: url('../../assets/images/pricing/desktop/hero.jpg');
+        }
+    }
+}

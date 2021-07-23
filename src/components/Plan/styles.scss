@@ -1,0 +1,86 @@
+@import '../../assets/css/general.scss';
+
+.plan {
+    @extend %align-center;
+    @extend %flex;
+    @extend %justify-between;
+    @extend %px-5;
+    @extend %py-1;
+    @extend %w-100;
+
+    @media screen and (min-width: 501px) {
+        align-items: stretch;
+        flex-direction: row;
+    }
+
+    &--pro {
+        @extend %bg-black;
+        @extend %text-white;
+    }
+}
+
+.plan__content {
+    @extend %align-center;
+    @extend %d-none;
+    @extend %flex-column;
+    @extend %justify-between;
+    @extend %text-center;
+    @extend %text-white;
+    @extend %w-100;
+}
+
+.plan__content--tablet {
+    @extend %align-center;
+    @extend %d-none;
+    @extend %flex-column;
+    @extend %justify-start;
+
+    @media screen and (min-width: 501px) {
+        display: flex;
+    }
+}
+
+.plan__name {
+    @extend %font-weight-7;
+    font-size: 1.3rem;
+}
+
+.plan__description {
+    @extend %opacity-8;
+    font-size: .9rem;
+}
+
+.plan__price {
+    @extend %font-weight-7;
+    @extend %text-center;
+    @extend %opacity-8;
+    font-size: 1.4rem;
+
+    &::after {
+        @extend %d-block;
+        content: 'per month';
+        font-size: .95rem;
+        margin-top: 1rem;
+    }
+
+    &--anually::after {   
+        content: 'per year';
+    }
+
+    @media screen and (min-width: 501px) {
+        text-align: right;
+    }
+}
+
+.plan__link {
+    @extend %bg-black;
+    @extend %text-white;
+    font-size: .9rem;
+    margin: 1.5rem auto 0 auto;
+    width: 90%;
+
+    &--pro {
+        @extend %bg-white;
+        @extend %text-black;
+    }
+}
