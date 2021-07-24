@@ -13,21 +13,52 @@
 .header__navigation {
     @extend %d-none;
 
+    &--mobile {
+        @extend %align-stretch;
+        @extend %flex;
+        @extend %flex-column;
+        @extend %w-100;
+
+        background: #FFF;
+        left: 0%;
+        position: absolute;
+        padding: 1rem 5% 2rem 5%;
+        top: 62px;
+    }
+
     @media screen and (min-width: 565px) {
         display: block;
     }
 }
 
 .header__list {
-    @extend %flex;
     @extend %align-center;
+    @extend %flex;
+    @extend %flex-column;
+    border-bottom: 1px solid #CCC;
+    padding-bottom: 10px;
+
+    @media screen and (min-width: 565px) {
+        & {
+            border-bottom: none;
+            flex-direction: row;
+            padding-bottom: 0;
+        }
+    }
 }
 
 .header__item {
-    margin-left: 15px;
+    margin-bottom: 10px;
 
-    &:last-child {
-        margin-left: 0;
+    @media screen and (min-width: 565px) {
+        & {
+            margin-bottom: 0;
+            margin-left: 15px;
+        }
+
+        &:last-child {
+            margin-left: 0;
+        }
     }
 }
 
@@ -81,6 +112,14 @@
     &:last-child {
         margin-bottom: 0;
     }
+
+    &--first {
+        transform: rotate(50deg);transform: translateY(3px) rotate(43deg);
+    }
+
+    &--second {
+        transform: translateY(-5px) rotate(-43deg);
+    }
 }
 
 .header__invite-button {
@@ -94,9 +133,22 @@
     font-size: .8rem;
     padding: .5rem 1rem;
 
+    &--mobile {
+        @extend %text-center;
+        @extend %w-100;
+        display: block !important;
+        margin-top: 1rem;
+        padding: 1rem 0;
+        word-spacing: 5px;
+    }
+
     @media screen and (min-width: 565px) {
         & {
             display: block;
+        }
+
+        &--mobile {
+            display: none !important;
         }
     }
 }
