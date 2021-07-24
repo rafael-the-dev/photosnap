@@ -34,7 +34,7 @@ const prices = {
             url: '/'
         },
         pro: {
-            name: 'Basic',
+            name: 'Pro',
             description: 'More advanced features available. Recommended for photography veterans and professionals.',
             price: "390.00",
             url: '/'
@@ -46,6 +46,30 @@ const prices = {
             url: '/'
         }
     }
+};
+
+const Row = ({ title, hasBasic, hasPro, hasBusiness}) => {
+    return (
+        <li className="comparing-section__item">
+            <label className="comparing-section__caption">
+                { title }
+            </label>
+            <ul className="comparing-section__row">
+                <li  className="comparing-section__td">
+                    <span className="comparing-section__name">Basic</span>
+                    { hasBasic ? <span className="comparing-section__check"></span> : ''}
+                </li>
+                <li  className="comparing-section__td">
+                    <span className="comparing-section__name">Pro</span>
+                    { hasPro ? <span className="comparing-section__check"></span> : ''}
+                </li>
+                <li  className="comparing-section__td">
+                    <span className="comparing-section__name">Business</span>
+                    { hasBusiness ? <span className="comparing-section__check"></span> : ''}
+                </li>
+            </ul>
+        </li>
+    );
 };
 
 const Pricing = () => {
@@ -141,6 +165,20 @@ const Pricing = () => {
                         <Plan plan={prices[duration].pro} customClass="plan--pro"/>
                         <Plan plan={prices[duration].business} />
                     </div>
+                </section>
+                <section className="comparing-section">
+                    <h2 className="comparing-section__title">Compare</h2>
+                    <ul className="comparing-section__table">
+                        <Row title="The features" />
+                        <Row title="Unlimited story posting" hasBasic hasPro hasBusiness />
+                        <Row title="Unlimited photo upload" hasBasic hasPro hasBusiness />
+                        <Row title="Embedding custom content" hasPro hasBusiness />
+                        <Row title="Customize metadata" hasPro hasBusiness />
+                        <Row title="Advanced metrics" hasBusiness />
+                        <Row title="Photo downloads" hasBusiness />
+                        <Row title="Search engine indexing" hasBusiness />
+                        <Row title="Custom analytics" hasBusiness />
+                    </ul>
                 </section>
                 { bannerMemo }
             </main>

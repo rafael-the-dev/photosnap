@@ -16,7 +16,7 @@ const Header = () => {
                             <Link to="/features" className="link header__link">Features</Link>
                         </li>
                         <li className="header__item">
-                            <Link to="/" className="link header__link">Pricing</Link>
+                            <Link to="/pricing" className="link header__link">Pricing</Link>
                         </li>
                     </ul>
                 </nav>

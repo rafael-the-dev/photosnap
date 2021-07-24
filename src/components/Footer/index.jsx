@@ -15,7 +15,7 @@ const FooterNavigation = ({ customClass }) => {
                     <Link to="/features" className="link footer__link">Features</Link>
                 </li>
                 <li className="footer__item">
-                    <Link to="/" className="link footer__link">Pricing</Link>
+                    <Link to="/pricing" className="link footer__link">Pricing</Link>
                 </li>
             </ul>
         </nav>
