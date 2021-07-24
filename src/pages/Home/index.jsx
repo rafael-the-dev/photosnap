@@ -13,20 +13,23 @@ const Home = () => {
                 <section className="section hero">
                     <div className="section__illustration hero__illustration"></div>
                     <div className="hero__content section__content">
-                        <h1 className="section__content-title">
-                            Create and<br/>
-                            share your<br/>
-                            photo stories
-                        </h1>
-                        <p className="section__content-description">
-                            The dissected plateau area, while not actually made up of geological 
-                            mountains, is popularly called "mountains," especially in eastern 
-                            Kentucky and West Virginia, and while the ridges are not high, the 
-                            terrain is extremely rugged.
-                        </p>
-                        <Link to="/" className="section__content-link hero__content-link">
-                            Read the story <i className="section__content-link--icon hero__content-link"></i>
-                        </Link>
+                        <div  className="section__division">
+                            <h1 className="section__content-title">
+                                Create and<br/>
+                                share your<br/>
+                                photo stories
+                            </h1>
+                            <p className="section__content-description">
+                                The dissected plateau area, while not actually made up of geological 
+                                mountains, is popularly called "mountains," especially in eastern 
+                                Kentucky and West Virginia, and while the ridges are not high, the 
+                                terrain is extremely rugged.
+                            </p>
+                            <Link to="/" className="section__content-link hero__content-link">
+                                Read the story <i className="section__content-link--icon hero__content-link"></i>
+                            </Link>
+                            <span className="hero__bar"></span>
+                        </div>
                     </div>
                 </section>
                 <section className="section stories">

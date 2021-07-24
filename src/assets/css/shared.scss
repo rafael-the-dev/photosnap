@@ -41,8 +41,6 @@
     @extend %align-start;
     @extend %flex;
     @extend %flex-column;
-    @extend %px-5;
-    @extend %py-2;
     @extend %text-left;
     @extend %w-100;
 
@@ -60,13 +58,34 @@
     }
     
 }
+.section__division {
+    @extend %flex;
+    @extend %flex-column;
+    @extend %h-100;
+    @extend %relative;
+    @extend %px-5;
+    @extend %py-2;
+    @extend %w-100;
+
+    @media screen and (min-width: 564px) {
+        & {
+            height: auto;
+            padding-left: 10%;
+            padding-right: 10%;
+        }
+    }
+
+    @media screen and (min-width: 900px) {
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+}
 
 .section__content-title {
     font-size: 1.6rem;
     font-weight: 700;
     line-height: 2rem;
     letter-spacing: 1px;
-    margin-top: 1rem;
     opacity: .9;
     text-transform: uppercase;
 }
@@ -95,4 +114,24 @@
     height: 20px;
     margin-left: 15px;
     width: 40px;
+}
+
+.hero__bar {
+    @extend %absolute;
+    @extend %d-block;
+    background-image: linear-gradient(to right, #FFC593, #BC7198, #5A77FF);
+    height: 5px;
+    top: 0;
+    width: 30%;
+
+    @media screen and (min-width: 564px) {
+        & {
+            background-image: linear-gradient(to bottom, #FFC593, #BC7198, #5A77FF);
+            height: 90%;
+            left: 0;
+            bottom: 5%;
+            top: 5%;
+            width: 5px;
+        }
+    }
 }

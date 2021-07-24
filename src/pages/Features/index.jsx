@@ -11,12 +11,15 @@ const Features = () => {
                 <section className="section hero feature-hero">
                     <div className="section__illustration feature-hero__illustration"></div>
                     <div className="hero__content section__content">
-                        <h1 className="section__content-title hero__content-title">Features</h1>
-                        <p className="section__content-description hero__content-description">
-                            We make sure all of our features are designed to be loved by 
-                            every aspiring and even professional photograpers who wanted 
-                            to share their stories.
-                        </p>
+                        <div className="section__division">
+                            <h1 className="section__content-title hero__content-title">Features</h1>
+                            <p className="section__content-description hero__content-description">
+                                We make sure all of our features are designed to be loved by 
+                                every aspiring and even professional photograpers who wanted 
+                                to share their stories.
+                            </p>
+                            <span className="hero__bar"></span>
+                        </div>
                     </div>
                 </section>
                 <section className="service features-service">
