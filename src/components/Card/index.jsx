@@ -42,6 +42,7 @@ const Card = ({ image, author, name, cardLink }) => {
                     <span className="card__link-icon"></span>
                 </Link>
             </div>
+            <span className="card__bar"></span>
         </article>
     );
 };

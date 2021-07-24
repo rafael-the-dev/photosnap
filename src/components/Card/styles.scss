@@ -4,7 +4,17 @@
     @extend %d-block;
     @extend %relative;
     height: 300px;
+    transition: transform 400ms ease-in-out;
     width: 100%;
+
+    &:hover {
+        transform: translateY(-10px);
+        z-index: 15;
+    }
+
+    &:hover .card__bar {
+        display: block;
+    }
 
     @media screen and (min-width: 501px) {
         & {
@@ -75,4 +85,12 @@
     @extend %py-1;
     @extend %text-white;
     @extend %w-100;
+}
+
+.card__bar {
+    @extend %d-none;
+    @extend %w-100;
+    background-image: linear-gradient(to right, #FFC593, #BC7198, #5A77FF);
+    height: 5px;
+    z-index: 10;
 }
