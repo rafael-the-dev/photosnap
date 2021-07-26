@@ -52,7 +52,7 @@ const Stories = () => {
     }, [ ]);
 
     return (
-        <>
+        <div>
             <Header pageRef={storiesRef} />
             <div ref={storiesRef}>
                 <main className="px-xl">
@@ -83,7 +83,7 @@ const Stories = () => {
                 <Footer />
             </div>
             
-        </>
+        </div>
     );
 };
 

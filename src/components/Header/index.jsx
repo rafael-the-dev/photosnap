@@ -44,32 +44,30 @@ const Header = ({ pageRef }) => {
     };
 
     return (
-        <>
-            <header className="px-md px-lg header">
-                <Logo />
-                <nav ref={navigationRef} className="header__navigation">
-                    <ul className="header__list">
-                        <li className="header__item">
-                            <Link to="/stories" className="link header__link">Stories</Link>
-                        </li>
-                        <li className="header__item">
-                            <Link to="/features" className="link header__link">Features</Link>
-                        </li>
-                        <li className="header__item">
-                            <Link to="/pricing" className="link header__link">Pricing</Link>
-                        </li>
-                    </ul>
-                    <Link to="/" className="header__invite-button header__invite-button--mobile">
-                        Get an invite
-                    </Link>
-                </nav>
-                <button onClick={clickHandler} className="header__menu-button">
-                    <span ref={firstLineRef} className="header__line"></span>
-                    <span ref={secondLineRef} className="header__line"></span>
-                </button>
-                <Link to="/" className="header__invite-button">Get an invite</Link>
-            </header>
-        </>
+        <header className="px-md px-lg header">
+            <Logo />
+            <nav ref={navigationRef} className="header__navigation">
+                <ul className="header__list">
+                    <li className="header__item">
+                        <Link to="/stories" className="link header__link">Stories</Link>
+                    </li>
+                    <li className="header__item">
+                        <Link to="/features" className="link header__link">Features</Link>
+                    </li>
+                    <li className="header__item">
+                        <Link to="/pricing" className="link header__link">Pricing</Link>
+                    </li>
+                </ul>
+                <Link to="/" className="header__invite-button header__invite-button--mobile">
+                    Get an invite
+                </Link>
+            </nav>
+            <button onClick={clickHandler} className="header__menu-button">
+                <span ref={firstLineRef} className="header__line"></span>
+                <span ref={secondLineRef} className="header__line"></span>
+            </button>
+            <Link to="/" className="header__invite-button">Get an invite</Link>
+        </header>
     );
 };
 

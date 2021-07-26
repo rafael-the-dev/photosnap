@@ -7,8 +7,9 @@ import { useRef } from 'react';
 
 const Home = () => {
     const homeRef = useRef(null);
+    
     return (
-        <>
+        <div>
             <Header pageRef={homeRef} />
             <div ref={homeRef}>
                 <main className="px-xl">
@@ -111,7 +112,7 @@ const Home = () => {
                 </main>
                 <Footer />
             </div>
-        </>
+        </div>
     );
 };
 
