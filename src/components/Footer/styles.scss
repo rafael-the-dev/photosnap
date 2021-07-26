@@ -108,6 +108,11 @@
     @extend %text-white;
     @extend %opacity-8;
     font-size: .9rem;
+    transition: color 400ms;
+
+    &:hover {
+        color: darken(#DFDFDF, 10%);
+    }
 
     @media screen and (min-width: 545px) {
         font-size: .8rem;
@@ -132,6 +137,15 @@
     @extend %uppercase;
     @extend %text-white;
     font-size: .9rem;
+    transition: color 400ms;
+
+    .section__content-link--icon {
+        filter: invert(1);
+    }
+
+    &:hover  {
+        color: darken(#DFDFDF, 10%);
+    }
 }
 
 .footer__copyright {

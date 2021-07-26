@@ -92,15 +92,8 @@
     font-size: .8rem;
     margin-top: 1rem;
     display: block;
-}
 
-.highlight__link--icon {
-    @extend %bg-cover;
-    @extend %bg-center;
-    @extend %bg-no-repeat;
-    //background-image: url('../icons/arrow.svg');
-    display: inline-block;
-    height: 20px;
-    margin-left: 15px;
-    width: 40px;
+    .section__content-link--icon {
+        filter: invert(1);
+    }
 }

@@ -74,10 +74,13 @@ const Row = ({ title, hasBasic, hasPro, hasBusiness}) => {
 
 const Pricing = () => {
     const [ duration, setDuration ] = useState('monthly');
-    const monthlyRef = useRef(null);
-    const yearlyRef = useRef(null);
     const toggleButtonRef = useRef(null);
     const [ index, setIndex ] = useState(0);
+
+    const monthlyRef = useRef(null);
+    const yearlyRef = useRef(null);
+    const pricingRef = useRef(null);
+
     const types = [
         {
             name: 'monthly',
@@ -88,8 +91,9 @@ const Pricing = () => {
             ref: yearlyRef
         }
     ];
+
     const headerMemo = useMemo(() => {
-        return <Header />
+        return <Header pageRef={pricingRef}/>
     }, [ ]); 
 
     const bannerMemo = useMemo(() => {
@@ -127,65 +131,67 @@ const Pricing = () => {
     return (
         <>
             { headerMemo }
-            <main className="px-xl">
-                <section className="section pricing-hero">
-                    <div className="section__illustration pricing-hero__illustration"></div>
-                    <div className="hero__content section__content">
-                        <div className="section__division">
-                            <h1 className="section__content-title hero__content-title">Pricing</h1>
-                            <p className="section__content-description hero__content-description">
-                                Create a your stories, Photosnap is a platform for photographers and 
-                                visual storytellers. It’s the simple way to create and share 
-                                your photos.
-                            </p>
-                            <span className="hero__bar"></span>
+            <div ref={pricingRef}>
+                <main  className="px-xl">
+                    <section className="section pricing-hero">
+                        <div className="section__illustration pricing-hero__illustration"></div>
+                        <div className="hero__content section__content">
+                            <div className="section__division">
+                                <h1 className="section__content-title hero__content-title">Pricing</h1>
+                                <p className="section__content-description hero__content-description">
+                                    Create a your stories, Photosnap is a platform for photographers and 
+                                    visual storytellers. It’s the simple way to create and share 
+                                    your photos.
+                                </p>
+                                <span className="hero__bar"></span>
+                            </div>
                         </div>
-                    </div>
-                </section>
-                <section className="plans-section">
-                    <div className="plans-section__controller">
-                        <span 
-                            onClick={clickHandler} 
-                            ref={monthlyRef} 
-                            className="active plans-section__duration">
-                            Monthly
-                        </span>
-                        <button 
-                            ref={toggleButtonRef} 
-                            onClick={clickHandler} 
-                            className="plans-section__toggle-button">
-                            <span className="toggle"></span>
-                        </button>
-                        <span 
-                            onClick={clickHandler} 
-                            ref={yearlyRef} 
-                            className="plans-section__duration">
-                            Yearly
-                        </span>
-                    </div>
-                    <div className="plans-section__division">
-                        <Plan plan={prices[duration].basic} />
-                        <Plan plan={prices[duration].pro} customClass="plan--pro"/>
-                        <Plan plan={prices[duration].business} />
-                    </div>
-                </section>
-                <section className="comparing-section">
-                    <h2 className="comparing-section__title">Compare</h2>
-                    <ul className="comparing-section__table">
-                        <Row title="The features" />
-                        <Row title="Unlimited story posting" hasBasic hasPro hasBusiness />
-                        <Row title="Unlimited photo upload" hasBasic hasPro hasBusiness />
-                        <Row title="Embedding custom content" hasPro hasBusiness />
-                        <Row title="Customize metadata" hasPro hasBusiness />
-                        <Row title="Advanced metrics" hasBusiness />
-                        <Row title="Photo downloads" hasBusiness />
-                        <Row title="Search engine indexing" hasBusiness />
-                        <Row title="Custom analytics" hasBusiness />
-                    </ul>
-                </section>
-                { bannerMemo }
-            </main>
-            { footerMemo }
+                    </section>
+                    <section className="plans-section">
+                        <div className="plans-section__controller">
+                            <span 
+                                onClick={clickHandler} 
+                                ref={monthlyRef} 
+                                className="active plans-section__duration">
+                                Monthly
+                            </span>
+                            <button 
+                                ref={toggleButtonRef} 
+                                onClick={clickHandler} 
+                                className="plans-section__toggle-button">
+                                <span className="toggle"></span>
+                            </button>
+                            <span 
+                                onClick={clickHandler} 
+                                ref={yearlyRef} 
+                                className="plans-section__duration">
+                                Yearly
+                            </span>
+                        </div>
+                        <div className="plans-section__division">
+                            <Plan plan={prices[duration].basic} />
+                            <Plan plan={prices[duration].pro} customClass="plan--pro"/>
+                            <Plan plan={prices[duration].business} />
+                        </div>
+                    </section>
+                    <section className="comparing-section">
+                        <h2 className="comparing-section__title">Compare</h2>
+                        <ul className="comparing-section__table">
+                            <Row title="The features" />
+                            <Row title="Unlimited story posting" hasBasic hasPro hasBusiness />
+                            <Row title="Unlimited photo upload" hasBasic hasPro hasBusiness />
+                            <Row title="Embedding custom content" hasPro hasBusiness />
+                            <Row title="Customize metadata" hasPro hasBusiness />
+                            <Row title="Advanced metrics" hasBusiness />
+                            <Row title="Photo downloads" hasBusiness />
+                            <Row title="Search engine indexing" hasBusiness />
+                            <Row title="Custom analytics" hasBusiness />
+                        </ul>
+                    </section>
+                    { bannerMemo }
+                </main>
+                { footerMemo }
+            </div>
         </>
     );
 };

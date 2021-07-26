@@ -57,7 +57,10 @@ const Footer = () => {
                 </div>
             </div>
             <div className="footer__division">
-                <Link to="/" className="invite-link">Get an invite</Link>
+                <Link to="/" className="invite-link">
+                    Get an invite
+                    <i className="section__content-link--icon"></i>
+                </Link>
                 <p className="footer__copyright">Copyright 2019. All Rights Reserved</p>
             </div>
         </footer>

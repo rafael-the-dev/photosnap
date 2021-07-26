@@ -27,6 +27,10 @@
     @extend %text-white;
 }
 
+.hero__content .section__content-link--icon {
+    filter: invert(1);
+}
+
 .stories__illustration {
     background-image: url('../../assets/images/home/mobile/beautiful-stories.jpg');
 
@@ -166,4 +170,9 @@
     font-size: .85rem;
     line-height: 1.3rem;
     margin-top: 1rem;
+}
+
+.menu-opened {
+    background-color: #000 !important;
+    opacity: .5;
 }

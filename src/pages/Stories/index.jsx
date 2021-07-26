@@ -3,12 +3,9 @@ import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 import { Link } from 'react-router-dom';
 import './styles.scss';
-import { useEffect, useMemo, useState } from 'react';
-//import loadable from '@loadable/component';
-//import pMinDelay from 'p-min-delay';
+import { useEffect, useMemo, useState, useRef } from 'react';
 
 const lazyLoad = () => {
-   //setTimeout(() => {}, 2000);
     return (
         <>
             <Card image="rage-of-the-sea.jpg" name="The mountains" author="by John Appleseed" cardLink="/" />
@@ -39,8 +36,9 @@ const firstCardsLoad = () => {
 };
 
 const Stories = () => {
-    //const Value = loadable(() => pMinDelay(lazyLoad), 1000);
     const [ value, setValue ] = useState('');
+    const storiesRef = useRef(null);
+
     const firstCardsLoadMemo = useMemo(() => {
         return firstCardsLoad();
     }, []);
@@ -55,33 +53,36 @@ const Stories = () => {
 
     return (
         <>
-            <Header />
-            <main className="px-xl">
-                <section className="highlight">
-                    <div className="highlight__illustration"></div>
-                    <div className="highlight__content">
-                        <h1 className="highlight__title">
-                            Hazy full<br />moon of<br />appalachia
-                        </h1>
-                        <p className="highlight__description">
-                            The dissected plateau area, while not actually made up of 
-                            geological mountains, is popularly called "mountains," especially 
-                            in eastern Kentucky and West Virginia, and while the ridges are 
-                            not high, the terrain is extremely rugged.
-                        </p>
-                        <Link to="/" className="highlight__link">
-                            Read the story <i className="highlight__link--icon "></i>
-                        </Link>
-                    </div>
-                </section>
-                <section className="cards-section">
-                    { firstCardsLoadMemo }
-                    {
-                        value 
-                    }
-                </section>
-            </main>
-            <Footer />
+            <Header pageRef={storiesRef} />
+            <div ref={storiesRef}>
+                <main className="px-xl">
+                    <section className="highlight">
+                        <div className="highlight__illustration"></div>
+                        <div className="highlight__content">
+                            <h1 className="highlight__title">
+                                Hazy full<br />moon of<br />appalachia
+                            </h1>
+                            <p className="highlight__description">
+                                The dissected plateau area, while not actually made up of 
+                                geological mountains, is popularly called "mountains," especially 
+                                in eastern Kentucky and West Virginia, and while the ridges are 
+                                not high, the terrain is extremely rugged.
+                            </p>
+                            <Link to="/" className="highlight__link">
+                                Read the story <i className="section__content-link--icon"></i>
+                            </Link>
+                        </div>
+                    </section>
+                    <section className="cards-section">
+                        { firstCardsLoadMemo }
+                        {
+                            value 
+                        }
+                    </section>
+                </main>
+                <Footer />
+            </div>
+            
         </>
     );
 };
