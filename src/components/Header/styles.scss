@@ -119,7 +119,7 @@
 
 .header__line {
     @extend %w-100;
-    background-color: $black;
+    background-color: #000;
     height: 2px;
     margin-bottom: 7px;
     transition: transform 400ms;
