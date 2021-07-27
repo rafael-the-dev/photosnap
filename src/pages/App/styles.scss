@@ -5,14 +5,10 @@
 
 .fade-enter-active {
     opacity: 1;
-    transition: opacity 500ms ease-in;
-}
-
-.fade-exit {
-    opacity: 1;
+    transition: opacity 1s ease-in;
 }
 
 .fade-exit-active {
     opacity: 0;
-    transition: opacity 500ms;
+    transition: opacity 1s;
 }

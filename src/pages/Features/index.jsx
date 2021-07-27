@@ -8,7 +8,7 @@ const Features = () => {
     const featuresRef = useRef(null);
 
     return (
-        <div>
+        <>
             <Header pageRef={featuresRef} />
             <div ref={featuresRef}>
                 <main className="px-xl">
@@ -86,8 +86,7 @@ const Features = () => {
                 </main>
                 <Footer />
             </div>
-            
-        </div>
+        </>
     );
 };
 

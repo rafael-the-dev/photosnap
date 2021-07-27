@@ -129,7 +129,7 @@ const Pricing = () => {
     };
 
     return (
-        <div>
+        <>
             { headerMemo }
             <div ref={pricingRef}>
                 <main  className="px-xl">
@@ -192,7 +192,7 @@ const Pricing = () => {
                 </main>
                 { footerMemo }
             </div>
-        </div>
+        </>
     );
 };
 
