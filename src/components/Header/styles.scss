@@ -12,24 +12,31 @@
 
 .header__navigation {
     @extend %d-none;
+    @extend %align-stretch;
+    @extend %flex-column;
+    @extend %w-100;
+
+    background: #FFF;
+    box-shadow: 0 7px 7px #6d6d6d;
+    left: 0%;
+    position: absolute;
+    padding: 1rem 5% 2rem 5%;
+    top: 62px;
+    z-index: 10;
 
     &--mobile {
-        @extend %align-stretch;
-        @extend %flex;
-        @extend %flex-column;
-        @extend %w-100;
-
-        background: #FFF;
-        box-shadow: 0 7px 7px #6d6d6d;
-        left: 0%;
-        position: absolute;
-        padding: 1rem 5% 2rem 5%;
-        top: 62px;
-        z-index: 10;
+        display: flex !important;
     }
 
     @media screen and (min-width: 565px) {
-        display: block;
+        background: transparent;
+        box-shadow: none;
+        display: flex;
+        padding: 0;
+        position: relative;
+        top: 0;
+        width: auto;
+        z-index: 0;
     }
 }
 

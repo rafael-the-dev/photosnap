@@ -1,40 +1,25 @@
 import Logo from '../Logo';
 import './styles.scss';
 import { Link } from 'react-router-dom';
-import { useCallback, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 const Header = ({ pageRef }) => {
     const navigationRef = useRef(null);
     const firstLineRef = useRef(null);
     const secondLineRef = useRef(null);
 
-    const classRemover = useCallback(() => {
-        navigationRef.current.classList.remove('header__navigation--mobile');
-        firstLineRef.current.classList.remove('header__line--first');
-        secondLineRef.current.classList.remove('header__line--second');
-        pageRef.current.classList.remove('menu-opened');
-    }, [ pageRef ]);
-
-    useEffect(() => {
-        const windowRef = window;
-        windowRef.addEventListener('resize', event => {
-            if((event.target.innerWidth > 565) ) {
-                classRemover();
-            }
-        });
-
-        return () => windowRef.onresize = null;
-    }, [ classRemover ]);
-
     useEffect(() => {
         pageRef.current.addEventListener('click', () => {
-            classRemover();
+            navigationRef.current.classList.remove('header__navigation--mobile');
+            firstLineRef.current.classList.remove('header__line--first');
+            secondLineRef.current.classList.remove('header__line--second');
+            pageRef.current.classList.remove('menu-opened');
         });
 
         const current = pageRef.current;
 
         return () => current.onClick = null;
-    }, [ classRemover, pageRef ]);
+    }, [ pageRef ]);
 
     const clickHandler = () => {
         navigationRef.current.classList.toggle('header__navigation--mobile');

@@ -173,6 +173,11 @@
 }
 
 .menu-opened {
-    background-color: #000 !important;
+    background-color: #000;
     opacity: .5;
+
+    @media screen and (min-width: 565px) {
+        background-color: initial;
+        opacity: 1;
+    }
 }
